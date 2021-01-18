@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="uniranks.com">
+    <meta name="keywords" content="uniranks">
+    <meta name="author" content="Mazajnet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <base href="%PUBLIC_URL%/">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/assets/favicon/light.ico" id="light-scheme-icon">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/assets/favicon/dark.ico" id="dark-scheme-icon">
+
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link href="%PUBLIC_URL%/assets/fonts/material-outline-icons/styles.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/assets/fonts/meteocons/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.material.blue.light.css" />
+
+    <link href="%PUBLIC_URL%/assets/css/spinner.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/assets/css/general.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/assets/css/tables.css" rel="stylesheet">
+
+    <noscript id="jss-insertion-point"></noscript>
+
+    <title>Uniranks | Admin Pages Development</title>
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root" class="flex">
+      <div id="fuse-splash-screen">
+        <div class="center">
+          <div class="spinner-logo">
+            <img width="256" src="./assets/images/logos/uniranks-splash.png" alt="logo">
+          </div>
+          <div class="spinner-wrapper">
+            <div class="spinner">
+              <div class="inner">
+                <div class="gap"></div>
+                <div class="left">
+                  <div class="half-circle"></div>
+                </div>
+                <div class="right">
+                  <div class="half-circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/javascript">
+      var lightSchemeIcon = document.getElementById('light-scheme-icon');
+      var darkSchemeIcon = document.getElementById('dark-scheme-icon');
+
+      var matcher = window.matchMedia('(prefers-color-scheme: dark)');
+      matcher.addListener(onUpdate);
+      onUpdate();
+
+      function onUpdate() {
+        if (matcher.matches) {
+          lightSchemeIcon.remove();
+          document.head.append(darkSchemeIcon);
+        } else {
+          document.head.append(lightSchemeIcon);
+          darkSchemeIcon.remove();
+        }
+      }
+    </script>
+  </body>
+</html>

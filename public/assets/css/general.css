@@ -1,0 +1,13 @@
+.selector {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+.page_header {
+  background: linear-gradient(to right, #039be5 0%, #038acc 100%);
+}
+
+.page_header_dark {
+  background: linear-gradient(to right, #1e355b 0%, #1b2f51 100%);
+}
